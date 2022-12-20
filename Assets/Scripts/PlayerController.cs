@@ -23,14 +23,12 @@ public class PlayerController : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal");
         z = Input.GetAxisRaw("Vertical");
         jump = Input.GetAxis("Jump");
-        
-        gameObject.transform.Translate(new Vector3(x * speed * Time.deltaTime,0,z * speed * Time.deltaTime));
 
-        
     }
 
     private void FixedUpdate()
     {
+        rb.velocity = transform.TransformDirection(x * speed, rb.velocity.y, z * speed);
         if (jump > 0)
         {
             Collider[] hitColliders = Physics.OverlapSphere(groundCheck.transform.position, 0.1f, whatIsGround);
