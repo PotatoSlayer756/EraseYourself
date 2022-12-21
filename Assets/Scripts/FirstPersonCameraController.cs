@@ -7,7 +7,7 @@ public class FirstPersonCameraController : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private float xRotationSpeed;
     [SerializeField] private float yRotationSpeed;
-    [SerializeField] private Vector2 euler;
+    private Vector2 euler;
 
     private void Update()
     {

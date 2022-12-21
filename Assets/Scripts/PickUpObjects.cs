@@ -13,11 +13,17 @@ public class PickUpObjects : MonoBehaviour
     {
         RaycastHit hit;
 
+
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, maxDistance, pickupableLayer))
         {
-            rmbIcon.SetActive(true);
+            if(!isPicked) rmbIcon.SetActive(true);
+
             if (Input.GetButtonDown("Fire2") && !isPicked)
             {
+                if (hit.transform.gameObject.tag == "BrokenPixel")
+                {
+                    hit.transform.gameObject.GetComponentInChildren<Animator>().SetBool("isPicked", true);
+                }
                 isPicked = true;
                 pickedObject = hit.transform.gameObject;
                 pickedObject.transform.position = handsPosition.position;
@@ -25,15 +31,22 @@ public class PickUpObjects : MonoBehaviour
             }
             else if (Input.GetButtonDown("Fire2") && isPicked)
             {
+                if (hit.transform.gameObject.tag == "BrokenPixel")
+                {
+                    hit.transform.gameObject.GetComponentInChildren<Animator>().SetBool("isPicked", false);
+                }
                 isPicked = false;
                 pickedObject.transform.SetParent(null);
                 pickedObject = null;
+                
             }
+            
         }    
         else
         {
             rmbIcon.SetActive(false);
         }
+
     }
 
 }
