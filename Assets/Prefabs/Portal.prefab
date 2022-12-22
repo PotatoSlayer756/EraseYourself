@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 2818229282664636982}
   - component: {fileID: 2818229282664636983}
   - component: {fileID: 2818229282664636976}
-  - component: {fileID: 2818229282664636977}
+  - component: {fileID: 3889702853031765343}
+  - component: {fileID: 4455151561503249602}
   m_Layer: 0
   m_Name: Portal
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,17 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2818229282664636977
-MeshCollider:
+--- !u!65 &3889702853031765343
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2818229282664636978}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.344273, y: 1.9834734, z: 12.671337}
+  m_Center: {x: -0.17213602, y: 0.040603574, z: 0.29135165}
+--- !u!114 &4455151561503249602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2818229282664636978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458e65b063de86d4d85bd2421b865323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

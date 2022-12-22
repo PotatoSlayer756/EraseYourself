@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 2064373195692200560}
   m_Layer: 6
   m_Name: Cube (13)
-  m_TagString: BrokenPixel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
