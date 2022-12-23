@@ -13,24 +13,24 @@ public class PickUpObjects : MonoBehaviour
     [SerializeField] private TextMeshProUGUI absorbedPixelsText;
     [SerializeField] private GameObject portalOpenedPanel;
 
-    private GameObject portal;
 
-    private GameObject[] allPixelsOnLevel;
-    private int pixelsOnLevelAmount;
+    //private GameObject portal;
+    //private GameObject[] allPixelsOnLevel;
+    //private int pixelsOnLevelAmount;
 
-    private int absorbedPixels = 0;
+    internal int absorbedPixels = 0;
     private bool isPicked = false;
-    private void Start()
-    {
-        allPixelsOnLevel = GameObject.FindGameObjectsWithTag("BrokenPixel");
-        pixelsOnLevelAmount = allPixelsOnLevel.Length;
-        if(GameObject.FindGameObjectWithTag("Portal") != null)
-        {
-        portal = GameObject.FindGameObjectWithTag("Portal");
-        portal.SetActive(false);
+    //private void Start()
+    //{
+        //allPixelsOnLevel = GameObject.FindGameObjectsWithTag("BrokenPixel");
+        //pixelsOnLevelAmount = allPixelsOnLevel.Length;
+        //if(GameObject.FindGameObjectWithTag("Portal") != null)
+        //{
+        //portal = GameObject.FindGameObjectWithTag("Portal");
+        //portal.SetActive(false);
 
-        }
-    }
+    //}
+    //}
 
     GameObject pickedObject;
     private void Update()
@@ -93,11 +93,11 @@ public class PickUpObjects : MonoBehaviour
 
         absorbedPixelsText.text = $"{absorbedPixels}";
 
-        if(absorbedPixels == pixelsOnLevelAmount && portal != null)
-        {
-            portal.SetActive(true);
-            portalOpenedPanel.SetActive(true);
-        }
+        //if(absorbedPixels == pixelsOnLevelAmount && portal != null)
+        //{
+        //    portal.SetActive(true);
+        //    portalOpenedPanel.SetActive(true);
+        //}
     }
 
 }
