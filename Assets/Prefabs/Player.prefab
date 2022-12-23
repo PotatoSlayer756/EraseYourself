@@ -839,7 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2346207888989376591}
   xRotationSpeed: 700
-  yRotationSpeed: 700
+  yRotationSpeed: 10
   maxY: 60
   minY: -60
 --- !u!1 &2346207888989376591
@@ -959,7 +959,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 1
 --- !u!114 &2346207888989376588
 MonoBehaviour:
