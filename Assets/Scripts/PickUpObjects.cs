@@ -11,6 +11,7 @@ public class PickUpObjects : MonoBehaviour
     [SerializeField] private GameObject rmbIcon;
     [SerializeField] private GameObject absorbTip;
     [SerializeField] private TextMeshProUGUI absorbedPixelsText;
+    [SerializeField] private GameObject portalOpenedPanel;
 
     private GameObject portal;
 
@@ -95,6 +96,7 @@ public class PickUpObjects : MonoBehaviour
         if(absorbedPixels == pixelsOnLevelAmount && portal != null)
         {
             portal.SetActive(true);
+            portalOpenedPanel.SetActive(true);
         }
     }
 
