@@ -19,13 +19,16 @@ public class PickUpObjects : MonoBehaviour
 
     private int absorbedPixels = 0;
     private bool isPicked = false;
-    private Rigidbody rb;
     private void Start()
     {
         allPixelsOnLevel = GameObject.FindGameObjectsWithTag("BrokenPixel");
         pixelsOnLevelAmount = allPixelsOnLevel.Length;
+        if(GameObject.FindGameObjectWithTag("Portal") != null)
+        {
         portal = GameObject.FindGameObjectWithTag("Portal");
         portal.SetActive(false);
+
+        }
     }
 
     GameObject pickedObject;
@@ -89,7 +92,7 @@ public class PickUpObjects : MonoBehaviour
 
         absorbedPixelsText.text = $"{absorbedPixels}";
 
-        if(absorbedPixels == pixelsOnLevelAmount)
+        if(absorbedPixels == pixelsOnLevelAmount && portal != null)
         {
             portal.SetActive(true);
         }

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class RespawnOnCheckpoint : MonoBehaviour
 {
-    [SerializeField] Transform player;
     [SerializeField] private int index;
+    private Transform player;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -24,18 +24,6 @@ public class RespawnOnCheckpoint : MonoBehaviour
                 DataContainer.checkpointIndex = index;
 
             }
-        }
-    }
-
-    private void Update()
-    {
-        if(DataContainer.checkpointIndex == index)
-        {
-            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.green;
-        }
-        else if (DataContainer.checkpointIndex != index)
-        {
-            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         }
     }
 

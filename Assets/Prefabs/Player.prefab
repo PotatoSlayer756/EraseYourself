@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 2346207888684943131}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -762,6 +762,8 @@ MonoBehaviour:
   player: {fileID: 2346207888989376591}
   xRotationSpeed: 700
   yRotationSpeed: 700
+  maxY: 60
+  minY: -60
 --- !u!1 &2346207888989376591
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +900,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 2346207887709639971}
 --- !u!114 &2346207888957288977
 MonoBehaviour:
   m_ObjectHideFlags: 0
