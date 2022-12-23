@@ -9,11 +9,9 @@ public class FirstPersonCameraController : MonoBehaviour
     [SerializeField] private float yRotationSpeed;
     [SerializeField] private float maxY, minY;
     private Vector2 euler;
-    private Rigidbody playerRb;
     private void Start()
     {
         Application.targetFrameRate = -1;
-        playerRb = player.GetComponentInChildren<Rigidbody>();
     }
     private void LateUpdate()
     {
@@ -22,12 +20,8 @@ public class FirstPersonCameraController : MonoBehaviour
         
         euler.x = Mathf.Clamp(euler.x, minY, maxY);
         transform.localEulerAngles = euler;
+        player.gameObject.transform.Rotate(new Vector3(0, Input.GetAxisRaw("Mouse X") * yRotationSpeed * Time.deltaTime, 0));
 
     }
 
-    private void FixedUpdate()
-    {
-        playerRb.angularVelocity = new Vector3(0, Input.GetAxis("Mouse X") * yRotationSpeed, 0);
-        
-    }
 }

@@ -1700,7 +1700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2346207888879332039, guid: 5245423449763f4468328ccbf77012dc, type: 3}
       propertyPath: yRotationSpeed
-      value: 10
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 2346207888989376580, guid: 5245423449763f4468328ccbf77012dc, type: 3}
       propertyPath: m_Material
