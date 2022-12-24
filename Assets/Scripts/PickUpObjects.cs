@@ -46,6 +46,7 @@ public class PickUpObjects : MonoBehaviour
                 isPicked = true;
                 pickedObject = hit.transform.gameObject;
                 pickedObject.transform.position = handsPosition.position;
+                pickedObject.transform.rotation = handsPosition.rotation;
                 pickedObject.transform.SetParent(handsPosition);
 
                 if (pickedObject.gameObject.tag == "BrokenPixel")
