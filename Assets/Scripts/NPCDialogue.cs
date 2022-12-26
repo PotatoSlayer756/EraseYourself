@@ -18,11 +18,17 @@ public class NPCDialogue : MonoBehaviour
 
     bool isDialogueStarted = false;
     int currentStroke = 0;
+    public static string[] superCurrentArray;
     [HideInInspector] public string[] currentArray;
+
 
     private void Start()
     {
-        currentArray = standardDialog;
+        if (superCurrentArray == null)
+        {
+            currentArray = standardDialog;
+        }
+        else currentArray = superCurrentArray;
     }
     private void Update()
     {
@@ -37,6 +43,7 @@ public class NPCDialogue : MonoBehaviour
                 GameObject.FindObjectOfType<FirstPersonCameraController>().enabled = false;
                 DialoguePanel.SetActive(true);
                 isDialogueStarted = true;
+                npcText.text = currentArray[currentStroke];
             }
         }
         else
@@ -61,5 +68,7 @@ public class NPCDialogue : MonoBehaviour
 
             }
         }
+
+        Debug.Log(currentArray[0]);
     }
 }

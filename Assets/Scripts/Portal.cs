@@ -44,11 +44,11 @@ public class Portal : MonoBehaviour
         switch (portalIndex)
         {
             case 1: 
-                npcDialogue.currentArray = npcDialogue.afterFirstLevel;
+                NPCDialogue.superCurrentArray = npcDialogue.afterFirstLevel;
                 break;
-            case 2: npcDialogue.currentArray = npcDialogue.afterSecondLevel;
+            case 2: NPCDialogue.superCurrentArray = npcDialogue.afterSecondLevel;
                 break;
-            case 3: npcDialogue.currentArray = npcDialogue.afterThirdLevel;
+            case 3: NPCDialogue.superCurrentArray = npcDialogue.afterThirdLevel;
                 break;
 
         }
