@@ -18,7 +18,7 @@ public class PickUpObjects : MonoBehaviour
     //private GameObject[] allPixelsOnLevel;
     //private int pixelsOnLevelAmount;
 
-    internal int absorbedPixels = 0;
+    internal static int absorbedPixels = 0;
     private bool isPicked = false;
     //private void Start()
     //{

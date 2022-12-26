@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 public class Portal : MonoBehaviour
 {
     [SerializeField] private List<GameObject> neededPixels;
-    [SerializeField] private PickUpObjects pickUpObjects;
+    public int portalIndex;
+    [SerializeField] private NPCDialogue npcDialogue;
+    public static int currentAbsorbedPixels = 0;
+
     private void Start()
     {
         GetComponent<BoxCollider>().enabled = false;
@@ -26,13 +29,29 @@ public class Portal : MonoBehaviour
             GetComponent<BoxCollider>().enabled = true;
             GetComponent<MeshRenderer>().enabled = true;
         }
+
+        
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
+            currentAbsorbedPixels += 3;
             DataContainer.checkpointIndex = 0;
             SceneManager.LoadScene("HubScene");
         }
+
+        switch (portalIndex)
+        {
+            case 1: 
+                npcDialogue.currentArray = npcDialogue.afterFirstLevel;
+                break;
+            case 2: npcDialogue.currentArray = npcDialogue.afterSecondLevel;
+                break;
+            case 3: npcDialogue.currentArray = npcDialogue.afterThirdLevel;
+                break;
+
+        }
+        
     }
 }

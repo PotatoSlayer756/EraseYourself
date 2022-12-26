@@ -24,4 +24,13 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        collision.gameObject.transform.parent = gameObject.transform;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        collision.gameObject.transform.parent = null;
+    }
 }

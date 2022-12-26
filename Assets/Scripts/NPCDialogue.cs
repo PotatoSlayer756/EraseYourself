@@ -10,12 +10,15 @@ public class NPCDialogue : MonoBehaviour
     [SerializeField] private LayerMask npcLayer;
     [SerializeField] private GameObject EButton;
     [SerializeField] private GameObject DialoguePanel;
-    [SerializeField] private string[] strokes;
+    [SerializeField] public string[] standardDialog;
+    [SerializeField] public string[] afterFirstLevel;
+    [SerializeField] public string[] afterSecondLevel;
+    [SerializeField] public string[] afterThirdLevel;
     [SerializeField] private TextMeshProUGUI npcText;
 
     bool isDialogueStarted = false;
     int currentStroke = 0;
-
+    [HideInInspector] public string[] currentArray;
     private void Update()
     {
         RaycastHit hit;
@@ -41,7 +44,7 @@ public class NPCDialogue : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if(currentStroke >= strokes.Length)
+                if(currentStroke >= currentArray.Length)
                 {
                     isDialogueStarted = false;
                     GameObject.FindObjectOfType<PlayerController>().enabled = true;
@@ -49,7 +52,7 @@ public class NPCDialogue : MonoBehaviour
                     DialoguePanel.SetActive(false);
                     currentStroke = 0;
                 }
-                npcText.text = strokes[currentStroke++];
+                npcText.text = currentArray[currentStroke++];
 
             }
         }

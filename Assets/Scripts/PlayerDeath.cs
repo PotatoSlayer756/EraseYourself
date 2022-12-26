@@ -10,6 +10,7 @@ public class PlayerDeath : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            PickUpObjects.absorbedPixels = Portal.currentAbsorbedPixels;
         }
     }
 }

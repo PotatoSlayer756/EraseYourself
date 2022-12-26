@@ -23,7 +23,9 @@ public class PlayerController : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal");
         z = Input.GetAxisRaw("Vertical");
         jump = Input.GetAxis("Jump");
-        rb.velocity = transform.TransformDirection(x * speed, rb.velocity.y, z * speed);
+        //rb.velocity = transform.TransformDirection(x * speed, rb.velocity.y, z * speed);
+        transform.Translate(new Vector3(x * speed * Time.deltaTime, rb.velocity.y * Time.deltaTime, z * speed * Time.deltaTime));
+
     }
 
     private void FixedUpdate()
