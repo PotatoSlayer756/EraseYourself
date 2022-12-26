@@ -19,6 +19,11 @@ public class NPCDialogue : MonoBehaviour
     bool isDialogueStarted = false;
     int currentStroke = 0;
     [HideInInspector] public string[] currentArray;
+
+    private void Start()
+    {
+        currentArray = standardDialog;
+    }
     private void Update()
     {
         RaycastHit hit;
