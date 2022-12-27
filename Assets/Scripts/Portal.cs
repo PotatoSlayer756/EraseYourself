@@ -17,41 +17,49 @@ public class Portal : MonoBehaviour
 
     private void Update()
     {
-        for(int i = 0; i<neededPixels.Count; i++)
+        for (int i = 0; i < neededPixels.Count; i++)
         {
             if (!neededPixels[i])
             {
                 neededPixels.RemoveAt(i);
             }
         }
-        if(neededPixels.Count == 0)
+        if (neededPixels.Count == 0)
         {
             GetComponent<BoxCollider>().enabled = true;
             GetComponent<MeshRenderer>().enabled = true;
         }
 
-        
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            currentAbsorbedPixels += 3;
-            DataContainer.checkpointIndex = 0;
-            SceneManager.LoadScene("HubScene");
-        }
+            if (portalIndex == 1)
+            {
+                currentAbsorbedPixels += 4;
 
-        switch (portalIndex)
-        {
-            case 1: 
-                NPCDialogue.superCurrentArray = npcDialogue.afterFirstLevel;
-                break;
-            case 2: NPCDialogue.superCurrentArray = npcDialogue.afterSecondLevel;
-                break;
-            case 3: NPCDialogue.superCurrentArray = npcDialogue.afterThirdLevel;
-                break;
+
+                currentAbsorbedPixels += 3;
+                DataContainer.checkpointIndex = 0;
+                SceneManager.LoadScene("HubScene");
+            }
+
+            switch (portalIndex)
+            {
+                case 1:
+                    NPCDialogue.superCurrentArray = npcDialogue.afterFirstLevel;
+                    break;
+                case 2:
+                    NPCDialogue.superCurrentArray = npcDialogue.afterSecondLevel;
+                    break;
+                case 3:
+                    NPCDialogue.superCurrentArray = npcDialogue.afterThirdLevel;
+                    break;
+
+            }
 
         }
-        
     }
 }
