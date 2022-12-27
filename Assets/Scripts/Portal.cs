@@ -9,10 +9,13 @@ public class Portal : MonoBehaviour
     [SerializeField] private NPCDialogue npcDialogue;
     public static int currentAbsorbedPixels = 0;
 
+    int neededPixelsCount;
+
     private void Start()
     {
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
+        neededPixelsCount = neededPixels.Count;
     }
 
     private void Update()
@@ -36,15 +39,9 @@ public class Portal : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (portalIndex == 1)
-            {
-                currentAbsorbedPixels += 4;
-
-
-                currentAbsorbedPixels += 3;
+                currentAbsorbedPixels += neededPixelsCount;
                 DataContainer.checkpointIndex = 0;
                 SceneManager.LoadScene("HubScene");
-            }
 
             switch (portalIndex)
             {

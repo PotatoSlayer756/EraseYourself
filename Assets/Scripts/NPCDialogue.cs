@@ -68,7 +68,5 @@ public class NPCDialogue : MonoBehaviour
 
             }
         }
-
-        Debug.Log(currentArray[0]);
     }
 }
